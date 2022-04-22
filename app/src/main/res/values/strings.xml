@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MonsterApp1</string>
+    <string name="action_settings">Settings</string>
+    <string name="avatar">Monstruo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombre_del_monster">Nombre del Monster</string>
+    <string name="nombre">Nombre:</string>
+    <string name="click_aqu_para_a_adir_imagen">Click Aquí para añadir imagen</string>
+    <string name="agregar_monster">Agregar Monster</string>
+    <string name="inteligencia">Inteligencia:</string>
+    <string name="maldad">Maldad:</string>
+    <string name="fealdad">Fealdad:</string>
+</resources>
