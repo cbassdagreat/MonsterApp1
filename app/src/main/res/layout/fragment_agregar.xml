@@ -46,7 +46,7 @@
         <ImageView
             android:id="@+id/ivPreviewPic"
             android:layout_width="209dp"
-            android:layout_height="107dp"
+            android:layout_height="165dp"
             android:layout_gravity="center_horizontal"
             android:src="@android:drawable/ic_menu_gallery" />
 
@@ -165,31 +165,12 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvMonsPoints"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimary"
-            android:text="Monster Points"
-            android:textSize="34sp" />
-
-        <TextView
-            android:id="@+id/tvSumPoints"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:text="TextView"
-            android:textSize="34sp" />
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton3"
             android:layout_width="55dp"
             android:layout_height="57dp"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:background="@color/colorAccent"
             android:clickable="true"
             android:src="@android:drawable/ic_menu_add"
