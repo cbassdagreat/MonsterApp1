@@ -30,28 +30,89 @@
             android:textSize="34sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnAddPic"
+        <TextView
+            android:id="@+id/tvPickPic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/colorAccent"
-            android:text="@string/click_aqu_para_a_adir_imagen"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Elije la imagen de tu Monster"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib1"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_margin="1dp"
+                android:src="@drawable/asset01" />
+
+            <ImageButton
+                android:id="@+id/ib2"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:src="@drawable/asset02" />
+
+            <ImageButton
+                android:id="@+id/ib3"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:src="@drawable/asset03" />
+
+            <ImageButton
+                android:id="@+id/ib4"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:src="@drawable/asset04" />
+
+            <ImageButton
+                android:id="@+id/ib5"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:src="@drawable/asset05" />
+
+            <ImageButton
+                android:id="@+id/ib6"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:src="@drawable/asset06" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPickedPic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Monster Seleccionado"
             android:textAlignment="center"
             android:textSize="20sp" />
 
         <ImageView
-            android:id="@+id/ivPreviewPic"
-            android:layout_width="209dp"
-            android:layout_height="165dp"
+            android:id="@+id/ivPickedPick"
+            android:layout_width="80dp"
+            android:layout_height="85dp"
             android:layout_gravity="center_horizontal"
-            android:src="@android:drawable/ic_menu_gallery" />
+            tools:src="@tools:sample/avatars" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
@@ -68,7 +129,7 @@
 
             <EditText
                 android:id="@+id/etInt"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/colorAccent"
@@ -78,7 +139,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
@@ -95,7 +156,7 @@
 
             <EditText
                 android:id="@+id/etFea"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/colorAccent"
@@ -107,7 +168,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
@@ -136,7 +197,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
@@ -153,7 +214,7 @@
 
             <EditText
                 android:id="@+id/editTextTextPersonName4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@color/colorAccent"

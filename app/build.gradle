@@ -8,6 +8,11 @@ plugins {
 android {
     compileSdk 30
 
+    buildFeatures{
+        viewBinding = true
+    }
+
+
     defaultConfig {
         applicationId "cbass.monsterapp1"
         minSdk 23
