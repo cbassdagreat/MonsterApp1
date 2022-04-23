@@ -17,17 +17,15 @@ class MonsterAdapter : RecyclerView.Adapter<MonsterAdapter.CustomViewHolder>() {
         {
             with(binding)
             {
-                tvNom.text = monster.nombre
-                tvPoints.text = monster.puntos.toString()
-                ivMonster.setImageResource(monster.imagen)
-
-
+               tvNom.text = monster.nombre
+               tvPoints.text = monster.puntos.toString()
+               //ivMonster.setImageResource(monster.imagen!!)
             }
         }
 
     }
 
-    var lista:List<Monster> = ArrayList<Monster>()
+    var lista:List<Monster> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
@@ -42,7 +40,7 @@ class MonsterAdapter : RecyclerView.Adapter<MonsterAdapter.CustomViewHolder>() {
        return lista.size
     }
 
-    fun actualizar(list: List<Monster>)
+    fun actualizar(lista: List<Monster>)
     {
         this.lista = lista
         notifyDataSetChanged()

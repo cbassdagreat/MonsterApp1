@@ -7,24 +7,21 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "monster_table")
 class Monster(
     @ColumnInfo(name = "image")
-    var imagen:Int,
+    var imagen:Int?,
     @ColumnInfo(name = "name")
-    var nombre:String,
+    var nombre:String?,
     @ColumnInfo(name = "intel")
-    var intelligence:Int,
+    var intelligence:Int?,
     @ColumnInfo (name = "fea")
-    var fealdad:Int,
+    var fealdad:Int?,
     @ColumnInfo (name = "mal")
-    var maldad:Int,
+    var maldad:Int?,
     @ColumnInfo (name = "puntos")
-    var puntos:Int
+    var puntos:Int?
 
 ) {
 
     @PrimaryKey(autoGenerate = true)
     var id:Int=0
-
-
-
 
 }
