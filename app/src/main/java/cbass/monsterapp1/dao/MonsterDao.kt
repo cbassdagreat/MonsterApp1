@@ -13,6 +13,6 @@ interface MonsterDao {
     @Insert(onConflict =REPLACE)
     fun agregar(monster: Monster)
 
-    @Query("select id,name,puntos from monster_table")
+    @Query("select id,image,name,puntos from monster_table")
     fun listar() : LiveData<List<Monster>>
 }

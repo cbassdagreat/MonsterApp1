@@ -19,7 +19,7 @@ class MonsterAdapter : RecyclerView.Adapter<MonsterAdapter.CustomViewHolder>() {
             {
                tvNom.text = monster.nombre
                tvPoints.text = monster.puntos.toString()
-               //ivMonster.setImageResource(monster.imagen!!)
+               ivMonster.setImageResource(monster.imagen!!)
             }
         }
 
