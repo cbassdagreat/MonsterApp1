@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_listFragment_to_agregarFragment"
             app:destination="@id/agregarFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
     </fragment>
     <fragment
         android:id="@+id/agregarFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_agregar" >
         <action
             android:id="@+id/action_agregarFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="cbass.monsterapp1.ui.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_detalleFragment_to_listFragment"
             app:destination="@id/listFragment" />
     </fragment>
 </navigation>

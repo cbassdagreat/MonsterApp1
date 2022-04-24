@@ -18,9 +18,24 @@ class MonsterRepo (var context: Context){
         }
     }
 
+    fun eliminar(monster: Monster)
+    {
+        CoroutineScope(Dispatchers.IO).launch {
+            db.monsterDao().eliminar(monster)
+        }
+    }
+
+    fun actualizar(monster: Monster)
+    {
+        CoroutineScope(Dispatchers.IO).launch {
+            db.monsterDao().actualizar(monster)
+        }
+    }
+
     fun listar(): LiveData<List<Monster>>
     {
         return db.monsterDao().listar()
     }
+
 
 }
