@@ -21,6 +21,7 @@ class DetalleFragment : Fragment() {
     lateinit var binding: FragmentDetalleBinding
     val viewModel: MonsterVM by activityViewModels()
     var idPic: Int = 0
+    var monster = viewModel.monsterMutable.value
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,69 +32,30 @@ class DetalleFragment : Fragment() {
 
         with(binding)
         {
-            ib1.setOnClickListener {
-                idPic = R.drawable.asset01
-                ivPickedPic.setImageResource(idPic)
+            tvFealDet.text = monster!!.fealdad.toString()
+            tvIntDet.text = monster!!.intelligence.toString()
+            tvMalDet.text = monster!!.maldad.toString()
+            tvNombre.text = monster!!.nombre
+            ivPickedPic.setImageResource(monster?.imagen!!)
 
-            }
-            ib2.setOnClickListener {
-                idPic = R.drawable.asset02
-                ivPickedPic.setImageResource(idPic)
-            }
-
-            ib3.setOnClickListener {
-                idPic = R.drawable.asset03
-                ivPickedPic.setImageResource(idPic)
-            }
-
-            ib4.setOnClickListener {
-                idPic = R.drawable.asset04
-                ivPickedPic.setImageResource(idPic)
-            }
-
-            ib5.setOnClickListener {
-                idPic = R.drawable.asset05
-                ivPickedPic.setImageResource(idPic)
-            }
-
-            ib6.setOnClickListener {
-                idPic = R.drawable.asset06
-                ivPickedPic.setImageResource(idPic)
+            btnEditar.setOnClickListener{
+                Navigation.findNavController(requireView()).navigate(R.id.action_detalleFragment_to_editarFragment)
 
             }
 
-            fbAddAdd.setOnClickListener {
-
-                val imagen = idPic
-                val nombre = etNom.text.toString()
-                val intelligence = etInt.getText().toString().toInt()
-                val fealdad = etFea.getText().toString().toInt()
-                val maldad = etMal.getText().toString().toInt()
-                val puntos = intelligence + fealdad + maldad
-                //val monster: Monster = Monster(imagen,nombre, intelligence, fealdad, maldad, puntos)
-                viewModel.actualizar(imagen,nombre, intelligence, fealdad, maldad, puntos)
-
+            btnVolverDetalle.setOnClickListener {
                 Navigation.findNavController(requireView()).navigate(R.id.action_detalleFragment_to_listFragment)
-
             }
-
         }
-
-            viewModel.monsterMutable.observe(viewLifecycleOwner, Observer {
-                binding.ivPickedPic.setImageResource(it.imagen!!)
-                binding.etNom.text = Editable.Factory().newEditable(it.nombre.toString())
-                binding.etFea.text = Editable.Factory().newEditable(it.fealdad.toString())
-                binding.etInt.text = Editable.Factory().newEditable(it.intelligence.toString())
-                binding.etMal.text = Editable.Factory().newEditable(it.maldad.toString())
-                binding.tvPointsEdit.text = it.puntos.toString()
-
-            })
-
 
 
         return binding.root
-        }
     }
+}
+
+
+
+
 
 
 

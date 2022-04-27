@@ -34,5 +34,17 @@
         <action
             android:id="@+id/action_detalleFragment_to_listFragment"
             app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_detalleFragment_to_editarFragment"
+            app:destination="@id/editarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarFragment"
+        android:name="cbass.monsterapp1.ui.EditarFragment"
+        android:label="fragment_editar"
+        tools:layout="@layout/fragment_editar" >
+        <action
+            android:id="@+id/action_editarFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
     </fragment>
 </navigation>
