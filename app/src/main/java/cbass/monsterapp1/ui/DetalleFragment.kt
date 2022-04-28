@@ -2,6 +2,7 @@ package cbass.monsterapp1.ui
 
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,6 @@ class DetalleFragment : Fragment() {
     lateinit var binding: FragmentDetalleBinding
     val viewModel: MonsterVM by activityViewModels()
     var idPic: Int = 0
-    var monster = viewModel.monsterMutable.value
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,13 +32,9 @@ class DetalleFragment : Fragment() {
 
         with(binding)
         {
-            tvFealDet.text = monster!!.fealdad.toString()
-            tvIntDet.text = monster!!.intelligence.toString()
-            tvMalDet.text = monster!!.maldad.toString()
-            tvNombre.text = monster!!.nombre
-            ivPickedPic.setImageResource(monster?.imagen!!)
 
             btnEditar.setOnClickListener{
+
                 Navigation.findNavController(requireView()).navigate(R.id.action_detalleFragment_to_editarFragment)
 
             }
@@ -47,6 +43,18 @@ class DetalleFragment : Fragment() {
                 Navigation.findNavController(requireView()).navigate(R.id.action_detalleFragment_to_listFragment)
             }
         }
+
+        viewModel.monsterMutable.observe(viewLifecycleOwner, Observer {
+            binding.ivPickedPic.setImageResource(it.imagen!!)
+            binding.tvNombre.text = it.nombre.toString()
+            binding.tvFealDet.text = it.fealdad.toString()
+            Log.i("fealdad", it.fealdad.toString())
+            binding.tvIntDet.text = it.intelligence.toString()
+            binding.tvMalDet.text = it.maldad.toString()
+            binding.tvPointsEdit.text = it.puntos.toString()
+
+        })
+
 
 
         return binding.root

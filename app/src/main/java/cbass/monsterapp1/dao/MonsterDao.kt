@@ -17,6 +17,6 @@ interface MonsterDao {
     @Update
     fun actualizar(monster: Monster)
 
-    @Query("select id,image,name,puntos from monster_table")
+    @Query("select id,image,name,puntos, intel, fea, mal from monster_table")
     fun listar() : LiveData<List<Monster>>
 }

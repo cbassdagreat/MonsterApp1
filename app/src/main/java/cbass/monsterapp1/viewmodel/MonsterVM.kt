@@ -23,9 +23,9 @@ class MonsterVM (application: Application):AndroidViewModel(application){
         repo.agregar(m)
     }
 
-    fun actualizar(imagen:Int,nombre:String,intelligence:Int,fealdad:Int,maldad:Int,puntos:Int)
+    fun actualizar(imagen:Int,nombre:String,intelligence:Int,fealdad:Int,maldad:Int,puntos:Int, id:Int)
     {
-        val m = Monster(imagen, nombre, intelligence, fealdad, maldad, puntos)
+        val m = Monster(imagen, nombre, intelligence, fealdad, maldad, puntos, id)
         repo.actualizar(m)
     }
 

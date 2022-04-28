@@ -3,6 +3,7 @@ package cbass.monsterapp1.ui
 
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -64,7 +65,20 @@ class EditarFragment : Fragment() {
 
             }
 
+            viewModel.monsterMutable.observe(viewLifecycleOwner, Observer {
+                binding.ivPickedPic.setImageResource(it.imagen!!)
+                binding.etNom.text = it.nombre.toString().toEditable()
+                binding.etFea.text = it.fealdad.toString().toEditable()
+                //Log.i("fealdad", it.fealdad.toString())
+                binding.etInt.text = it.intelligence.toString().toEditable()
+                binding.etMal.text = it.maldad.toString().toEditable()
+                binding.tvPointsEdit.text = it.puntos.toString()
+
+            })
+
             btnEdit.setOnClickListener {
+
+                var id = viewModel.monsterMutable.value!!.id
 
                 val imagen = idPic
                 val nombre = etNom.text.toString()
@@ -72,10 +86,10 @@ class EditarFragment : Fragment() {
                 val fealdad = etFea.getText().toString().toInt()
                 val maldad = etMal.getText().toString().toInt()
                 val puntos = intelligence + fealdad + maldad
-                //val monster: Monster = Monster(imagen,nombre, intelligence, fealdad, maldad, puntos)
-                viewModel.actualizar(imagen,nombre, intelligence, fealdad, maldad, puntos)
+                val monster: Monster = Monster(imagen,nombre, intelligence, fealdad, maldad, puntos)
+                viewModel.actualizar(imagen,nombre, intelligence, fealdad, maldad, puntos, id)
 
-                Navigation.findNavController(requireView()).navigate(R.id.action_editarFragment_to_detalleFragment)
+                Navigation.findNavController(requireView()).navigate(R.id.action_editarFragment_to_listFragment)
 
             }
 
@@ -90,6 +104,8 @@ class EditarFragment : Fragment() {
 
         return binding.root
     }
+
+    fun String.toEditable(): Editable =  Editable.Factory.getInstance().newEditable(this)
 }
 
 
